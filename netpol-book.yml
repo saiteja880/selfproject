@@ -14,7 +14,7 @@ spec:
   - from:
     - podSelector:
         matchLabels:
-          app: app
+          app: app-service
     ports:
     - protocol: TCP
       port: 5002
