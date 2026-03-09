@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: db-service
+spec: 
+  selector:
+    matchLabels:
+      app: db-service 
+    template:
+      metadata:
+        labels:
+          app: db-service
+      spec:
+        containers:
+          - name: mysql
+            image: ss880/mynewapp1:dbimage
+            ports:
+            - containerPort: 3306
+            envFrom:
+             - configMapRef:
+               name: cm
+             - secretRef:
+                name: secret  
+
+
