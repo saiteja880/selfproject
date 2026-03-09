@@ -1,12 +1,12 @@
 apiVersion: v1
-kind: Service 
+kind: Service
 metadata:
-  name: db-service    
+  name: db-service
 spec:
+  clusterIP: None       # lowercase 'c'
   selector:
-    app: db-service 
+    app: db-service
   ports:
-  - protocol: TCP
-    port: 3306
-    targetPort: 3306  
- ClusterIp: None          
+    - port: 3306
+      targetPort: 3306
+      protocol: TCP

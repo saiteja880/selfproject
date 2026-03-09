@@ -3,6 +3,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cm
-  data:
+data:
     DB_PORT: "3306"
     DB_HOST: "db-service" 

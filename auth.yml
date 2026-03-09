@@ -11,11 +11,11 @@ spec:
     metadata:
       labels:
         app: auth-service 
-  spec:
-    containers: 
-        - name: auth-service
-          image: ss880/mynewapp1:authimage
-          ports:
-            - containerPort: 5001
+    spec:
+      containers: 
+          - name: auth-service
+            image: ss880/mynewapp1:authimage
+            ports:
+              - containerPort: 5001
 
 
