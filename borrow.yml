@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: borrow-service
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: borrow-service
+  template:
+    metadata:
+      labels:
+        app: borrow-service
+    spec:
+      containers:
+        - name: borrow-service
+          image: borrow-service:latest
+          ports:
+            - containerPort: 5002
