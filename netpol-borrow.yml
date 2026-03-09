@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: borrow-service-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: borrow-service
+  policyTypes:
+  - Ingress
+  - Egress
+
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: app
+    ports:
+    - protocol: TCP
+      port: 5003
+
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: db-service
+    ports:
+    - protocol: TCP
+      port: 3306
