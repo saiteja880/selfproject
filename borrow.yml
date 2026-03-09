@@ -16,4 +16,4 @@ spec:
         - name: borrow-service
           image: ss880/mynewapp1:borrowimage
           ports:
-            - containerPort: 5002
+            - containerPort: 5003
